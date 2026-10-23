@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buat Lowongan Baru - JobsKuy</title>
+  <link rel="stylesheet" href="../css/buat-lowongan.css">
+</head>
+<body>
+
+  <form id="formLowongan" novalidate>
+
+    <header class="topbar">
+      <a href="../index.html" class="back">&larr;</a>
+      <h1>Buat Lowongan Baru</h1>
+    </header>
+
+    <div class="field">
+      <label for="namaPekerjaan">Nama Pekerjaan</label>
+      <input type="text" id="namaPekerjaan" placeholder="Contoh : security">
+      <small class="error"></small>
+    </div>
+
+    <div class="baris">
+      <div class="field">
+        <label for="deskripsi">Deskripsi Pekerjaan</label>
+        <textarea id="deskripsi" rows="6"></textarea>
+        <small class="error"></small>
+      </div>
+
+      <div class="field">
+        <label for="alamat">Alamat detail pekerjaan</label>
+        <div class="alamat-wrap">
+            <img src="../assets/images/gmaps.png" alt="Peta lokasi" class="peta">
+          <textarea id="alamat" rows="6" placeholder="Isi alamat lewat peta"></textarea>
+        </div>
+        <small class="error"></small>
+      </div>
+    </div>
+
+    <div class="field" id="fieldDokumen">
+      <label>Syarat Dokumen Tambahan</label>
+      <div class="dokumen-list" id="dokumenList"></div>
+      <div class="dokumen-tambah">
+        <input type="text" id="inputDokumen" placeholder="Nama dokumen, contoh: SIM A">
+        <button type="button" id="btnTambah">+ Tambah</button>
+      </div>
+      <small class="error"></small>
+    </div>
+
+    <div class="field">
+      <label for="kuota">Batas Maksimal Pelamar Kerja</label>
+      <input type="number" id="kuota" min="1" placeholder="Contoh : 10">
+      <small class="error"></small>
+    </div>
+
+    <div class="field">
+      <label for="gaji">Rentang Gaji</label>
+      <input type="text" id="gaji" placeholder="Contoh : Rp 5.000.000,-">
+      <small class="error"></small>
+    </div>
+
+    <div class="field">
+      <label>Status Lowongan</label>
+      <label class="switch">
+        <input type="checkbox" id="status">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <button type="submit" class="btn-pasang">Pasang Lowongan</button>
+  </form>
+
+  <!-- Pop-up sukses -->
+  <div class="modal-overlay" id="modalSukses" hidden>
+    <div class="modal">
+      <div class="ikon-centang">&#10003;</div>
+      <h2>Lowongan Kerja Berhasil di Publish</h2>
+      <p>Kandidat akan segera melihat lowongan anda</p>
+      <button type="button" id="btnOk">OK</button>
+    </div>
+  </div>
+
+  <script src="../js/buat-lowongan.js"></script>
+</body>
+</html>
