@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buat Lowongan Baru - JobsKuy</title>
-  <link rel="stylesheet" href="../css/buat-lowongan.css">
+<link rel="stylesheet" href="{{ asset('css/buat-lowongan.css') }}">
 </head>
 <body>
 
@@ -81,6 +81,6 @@
     </div>
   </div>
 
-  <script src="../js/buat-lowongan.js"></script>
+  <script src="{{ asset('js/buat-lowongan.js') }}"></script>
 </body>
 </html>
