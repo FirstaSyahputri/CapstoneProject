@@ -12,8 +12,19 @@
         body { background-color: #f1f5f9; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 20px 0; }
         
         /* Container Tampilan Web Mobile-Responsive Center */
-        .app-layout { width: 100%; max-width: 440px; background: #ffffff; min-height: 840px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; position: relative; display: flex; flex-direction: column; }
-        
+        /* Ubah dari max-width 440px dan border-radius menjadi full-width */
+        .app-layout { 
+            width: 100%; 
+            max-width: 100%; /* Menghilangkan batasan lebar */
+            background: #ffffff; 
+            min-height: 100vh; 
+            border-radius: 0; /* Menghilangkan sudut melengkung ala HP */
+            box-shadow: none; 
+            overflow: hidden; 
+            position: relative; 
+            display: flex; 
+            flex-direction: column; 
+        }
         /* Header Navigasi */
         .nav-header { display: flex; align-items: center; padding: 20px 24px; border-bottom: 1px solid #e2e8f0; background: #ffffff; sticky: top; }
         .back-btn { font-size: 20px; text-decoration: none; color: #0f172a; margin-right: 16px; cursor: pointer; border: none; background: none; }
