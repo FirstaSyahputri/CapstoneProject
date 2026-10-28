@@ -1,0 +1,271 @@
+/* Reset Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F0F2F6;
+    color: #1A1D24;
+    font-family: 'Inter', sans-serif;
+    padding: 40px 20px;
+}
+
+.dashboard-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 16px rgba(26, 29, 36, 0.05);
+}
+
+/* Header & Tombol Back */
+.header-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.btn-back {
+    color: #1A1D24;
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.btn-back:hover {
+    transform: translateX(-3px);
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1A1D24;
+}
+
+/* Garis Pembatas Tipis */
+.divider {
+    height: 1px;
+    background-color: #C4CBD6;
+    margin-bottom: 28px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1A1D24;
+    margin-bottom: 16px;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7A8494;
+    font-size: 0.95rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    background-color: #F0F2F6;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: #1A1D24;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.search-input:focus {
+    background-color: #FFFFFF;
+    border-color: #4A90E2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+/* List Card Landscape */
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.job-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid #C4CBD6;
+    border-radius: 14px;
+    padding: 18px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(26, 29, 36, 0.05);
+}
+
+.job-card-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Box Ikon Placeholder */
+.job-icon-box {
+    width: 56px;
+    height: 56px;
+    background-color: #EEF5FC;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #4A90E2;
+    flex-shrink: 0;
+}
+
+.job-details .job-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1A1D24;
+    margin-bottom: 4px;
+}
+
+.job-details .job-requirements {
+    font-size: 0.875rem;
+    color: #7A8494;
+}
+
+/* Bagian Kanan Card (Tombol Aksi) */
+.job-card-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-detail {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #4A90E2; 
+    color: #FFFFFF;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-detail:hover {
+    background-color: #C6E2F7; 
+    color: #1A1D24;
+}
+
+/* Tombol Hapus */
+.btn-delete {
+    padding: 8px 20px;
+    background-color: #E74C3C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+.empty-state {
+    text-align: center;
+    color: #7A8494;
+    padding: 30px 0;
+}
+
+/* Styling Modal / Pop-up Konfirmasi Hapus */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background: #FFF5F5;
+    padding: 35px 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.modal-box h3 {
+    font-size: 1.25rem;
+    color: #1A1D24;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.modal-box p {
+    font-size: 0.95rem;
+    color: #3A414E;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.modal-btn-container {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-modal-cancel {
+    background-color: #64748B;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-modal-cancel:hover {
+    background-color: #475569;
+}
+
+.btn-modal-confirm {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-modal-confirm:hover {
+    background-color: #C0392B;
+}
