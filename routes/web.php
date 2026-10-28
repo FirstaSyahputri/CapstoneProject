@@ -11,3 +11,6 @@ Route::get('/profil-pelamar', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/updatewawancara', function () {
+    return view('Seeker.updatewawancara');
+});

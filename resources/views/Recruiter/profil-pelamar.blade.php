@@ -440,6 +440,48 @@
         function closeDocModal() { document.getElementById('doc-modal').classList.add('hidden'); }
         function playVideo() { document.getElementById('video-modal').classList.remove('hidden'); }
         function closeVideoModal() { document.getElementById('video-modal').classList.add('hidden'); }
+
+        function openInterviewModal() { document.getElementById('interview-modal').classList.remove('hidden'); }
+        function closeInterviewModal() { document.getElementById('interview-modal').classList.add('hidden'); }
+        
+        function handleSendInterview(e) {
+            e.preventDefault();
+            
+            // Simpan data jadwal ke localStorage agar Seeker bisa baca
+            const interviewData = {
+                status: 'interview',
+                date: document.getElementById('selected-date').value,
+                time: document.getElementById('selected-time').value,
+                location: document.getElementById('interview-location').value,
+                notes: document.getElementById('interview-notes').value || '-'
+            };
+            localStorage.setItem('jobskuy_status', JSON.stringify(interviewData));
+
+            closeInterviewModal();
+            showToast('Undangan interview berhasil dikirim ke Budi Santoso!', 'success');
+            document.getElementById('current-status-badge').innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Interview Dijadwalkan';
+        }
+
+        // Modal Interaksi: Penolakan
+        function openRejectStep1Modal() { document.getElementById('reject-step1-modal').classList.remove('hidden'); }
+        function closeRejectStep1Modal() { document.getElementById('reject-step1-modal').classList.add('hidden'); }
+        function proceedToRejectStep2() { closeRejectStep1Modal(); document.getElementById('reject-step2-modal').classList.remove('hidden'); }
+        function closeRejectStep2Modal() { document.getElementById('reject-step2-modal').classList.add('hidden'); }
+        
+        function handleFinalRejectSubmit(e) {
+            e.preventDefault();
+            
+            // Simpan status ditolak ke localStorage
+            const rejectData = { status: 'rejected' };
+            localStorage.setItem('jobskuy_status', JSON.stringify(rejectData));
+
+            closeRejectStep2Modal();
+            showToast('Pesan penolakan ramah telah dikirim.', 'error');
+            document.getElementById('current-status-badge').innerHTML = '<span class="w-2 h-2 rounded-full bg-slate-400"></span> Kandidat Ditolak';
+        }
+
+        function previewDocument(title) { alert('Pratinjau Dokumen: ' + title); }
+        function playVideo() { alert('Memutar video perkenalan kandidat.'); }
     </script>
 </body>
 </html>
