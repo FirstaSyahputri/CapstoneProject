@@ -1,0 +1,73 @@
+
+:root {
+    --color-primary: #4A90E2;
+    --color-prim-light: #C6E2F7;
+    --color-prim-pale: #EEF5FC;
+    --color-secondary: #F59E3F;
+    --color-success: #2ECC71;
+    --color-danger: #E74C3C;
+
+    --color-n-900: #1A1D24;
+    --color-n-700: #3A414E;
+    --color-n-500: #7A8494;
+    --color-n-300: #C4CBD6;
+    --color-n-100: #F0F2F6;
+    --color-white: #FFFFFF;
+
+    --bs-primary: var(--color-primary);
+    --bs-secondary: var(--color-secondary);
+    --bs-success: var(--color-success);
+    --bs-danger: var(--color-danger);
+    --bs-body-bg: var(--color-n-100);
+    --bs-body-color: var(--color-n-900);
+    --bs-border-color: var(--color-n-300);
+
+    --page-radius: 16px;
+    --page-shadow: 0 4px 16px rgba(26, 29, 36, 0.05);
+
+    
+    /* Status palette */
+    --color-status-pending: var(--color-secondary);
+    --color-status-pending-bg: #FFF4E5;
+    --color-status-pending-border: #FAD7A0;
+
+    --color-status-viewed: var(--color-primary);
+    --color-status-viewed-bg: var(--color-prim-pale);
+    --color-status-viewed-border: var(--color-prim-light);
+
+    --color-status-review: #7654C8;
+    --color-status-review-bg: #F2EDFC;
+    --color-status-review-border: #D9CCF5;
+
+    --color-status-interview: var(--color-success);
+    --color-status-interview-bg: #EAF9F0;
+    --color-status-interview-border: #B8E8CA;
+
+}
+
+body {
+    background: var(--color-n-100);
+    color: var(--color-n-900);
+    font-family: 'Inter', sans-serif;
+}
+
+.button-primary {
+    background: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: var(--color-white);
+    transition: 0.2s ease;
+}
+
+.button-primary:hover {
+    background: var(--color-prim-light);
+    border-color: var(--color-prim-light);
+    color: var(--color-n-900);
+}
+
+.bg-n-100 { background-color: var(--color-n-100) !important; }
+.bg-n-900 { background-color: var(--color-n-900) !important; }
+.bg-prim-pale { background-color: var(--color-prim-pale) !important; }
+
+.text-n-900 { color: var(--color-n-900) !important; }
+.text-n-700 { color: var(--color-n-700) !important; }
+.text-n-500 { color: var(--color-n-500) !important; }

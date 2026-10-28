@@ -1,0 +1,520 @@
+.lowongan-saya-page,
+.lowongan-saya-page *,
+.lowongan-saya-page *::before,
+.lowongan-saya-page *::after {
+    box-sizing: border-box;
+}
+
+/* Kontainer utama halaman */
+.lowongan-saya-page {
+    width: 100%;
+    min-width: 0;
+    color: var(--color-n-900);
+    font-family: 'Inter', sans-serif;
+}
+
+.lowongan-saya-page .dashboard-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: var(--page-radius);
+    box-shadow: var(--page-shadow);
+}
+
+/* Header halaman */
+.lowongan-saya-page .header-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.lowongan-saya-page .btn-back {
+    color: var(--color-n-900);
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.lowongan-saya-page .btn-back:hover {
+    color: var(--color-primary);
+    transform: translateX(-3px);
+}
+
+.lowongan-saya-page .page-title {
+    margin: 0;
+    color: var(--color-n-900);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.lowongan-saya-page .divider {
+    height: 1px;
+    margin-bottom: 28px;
+    background-color: var(--color-n-300);
+}
+
+.lowongan-saya-page .section-title {
+    margin: 0 0 16px;
+    color: var(--color-n-900);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Notifikasi sukses */
+.lowongan-saya-page .success-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background-color: var(--color-status-interview-bg);
+    border: 1px solid var(--color-status-interview-border);
+    border-radius: 10px;
+    color: var(--color-n-700);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.lowongan-saya-page .success-message i {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-success);
+}
+
+/* Ringkasan validasi */
+.lowongan-saya-page .validation-summary {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background-color: var(--color-status-pending-bg);
+    border: 1px solid var(--color-status-pending-border);
+    border-radius: 10px;
+    color: var(--color-n-700);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.lowongan-saya-page .validation-summary ul {
+    margin: 6px 0 0;
+    padding-left: 20px;
+}
+
+.lowongan-saya-page .validation-summary li {
+    margin-bottom: 3px;
+}
+
+/* Kolom pencarian */
+.lowongan-saya-page .search-box {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.lowongan-saya-page .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    color: var(--color-n-500);
+    font-size: 0.95rem;
+    pointer-events: none;
+}
+
+.lowongan-saya-page .search-input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px 14px 48px;
+    background-color: var(--color-n-100);
+    border: 1px solid var(--color-n-300);
+    border-radius: 12px;
+    color: var(--color-n-900);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.lowongan-saya-page .search-input::placeholder {
+    color: var(--color-n-500);
+}
+
+.lowongan-saya-page .search-input:focus {
+    background-color: var(--color-white);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-prim-pale);
+}
+
+/* Daftar lowongan */
+.lowongan-saya-page .job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.lowongan-saya-page .job-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-width: 0;
+    padding: 18px 24px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: var(--page-radius);
+    box-shadow: var(--page-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lowongan-saya-page .job-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--page-shadow);
+}
+
+.lowongan-saya-page .job-card-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+}
+
+.lowongan-saya-page .job-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    background-color: var(--color-prim-pale);
+    border-radius: 12px;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+}
+
+.lowongan-saya-page .job-details {
+    min-width: 0;
+}
+
+.lowongan-saya-page .job-details .job-name {
+    margin: 0 0 4px;
+    color: var(--color-n-900);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.lowongan-saya-page .job-details .job-requirements {
+    margin: 0;
+    color: var(--color-n-500);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.lowongan-saya-page .job-requirements i {
+    margin-right: 4px;
+    color: var(--color-n-500);
+}
+
+/* Tombol pada kartu */
+.lowongan-saya-page .job-card-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    gap: 10px;
+}
+
+.lowongan-saya-page .btn-detail,
+.lowongan-saya-page .btn-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 20px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                opacity 0.2s ease;
+}
+
+.lowongan-saya-page .btn-detail {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.lowongan-saya-page .btn-detail:hover {
+    background-color: var(--color-prim-light);
+    border-color: var(--color-prim-light);
+    color: var(--color-n-900);
+}
+
+.lowongan-saya-page .btn-delete {
+    background-color: var(--color-danger);
+    border-color: var(--color-danger);
+    color: var(--color-white);
+}
+
+.lowongan-saya-page .btn-delete:hover {
+    opacity: 0.85;
+}
+
+/* Kondisi daftar kosong */
+.lowongan-saya-page .empty-state {
+    margin: 0;
+    padding: 30px 0;
+    color: var(--color-n-500);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.lowongan-saya-page .empty-state i {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--color-n-300);
+    font-size: 1.8rem;
+}
+
+/* Modal konfirmasi hapus */
+.lowongan-saya-page .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--color-n-700);
+}
+
+.lowongan-saya-page .modal-box {
+    width: 100%;
+    max-width: 380px;
+    padding: 35px 30px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: var(--page-radius);
+    box-shadow: var(--page-shadow);
+    text-align: center;
+}
+
+.lowongan-saya-page .modal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 16px;
+    background-color: var(--color-status-pending-bg);
+    border: 1px solid var(--color-status-pending-border);
+    border-radius: 50%;
+    color: var(--color-secondary);
+    font-size: 1.4rem;
+}
+
+.lowongan-saya-page .modal-box h3 {
+    margin: 0 0 12px;
+    color: var(--color-n-900);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.lowongan-saya-page .modal-box p {
+    margin: 0 0 24px;
+    color: var(--color-n-700);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.lowongan-saya-page .modal-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.lowongan-saya-page .btn-modal-cancel,
+.lowongan-saya-page .btn-modal-confirm {
+    padding: 10px 24px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                opacity 0.2s ease;
+}
+
+.lowongan-saya-page .btn-modal-cancel {
+    background-color: var(--color-n-500);
+    border-color: var(--color-n-500);
+    color: var(--color-white);
+}
+
+.lowongan-saya-page .btn-modal-cancel:hover {
+    background-color: var(--color-n-700);
+    border-color: var(--color-n-700);
+}
+
+.lowongan-saya-page .btn-modal-confirm {
+    background-color: var(--color-danger);
+    border-color: var(--color-danger);
+    color: var(--color-white);
+}
+
+.lowongan-saya-page .btn-modal-confirm:hover {
+    opacity: 0.85;
+}
+
+/* Fokus keyboard */
+.lowongan-saya-page button:focus-visible,
+.lowongan-saya-page a:focus-visible,
+.lowongan-saya-page .search-input:focus-visible {
+    outline: 3px solid var(--color-prim-light);
+    outline-offset: 3px;
+}
+
+/* Pastikan elemen hidden tidak ditampilkan */
+.lowongan-saya-page [hidden] {
+    display: none !important;
+}
+
+/* Pop-up pesan sukses atau error */
+.detail-lowongan-page .response-message-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10000;
+    width: calc(100% - 40px);
+    max-width: 420px;
+    margin: 0;
+    padding: 24px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(26, 29, 36, 0.18);
+    transform: translate(-50%, -50%);
+}
+
+.detail-lowongan-page .response-message-card.success {
+    background-color: var(--color-white);
+    border-color: var(--color-status-interview-border);
+}
+
+.detail-lowongan-page .response-message-card.error {
+    background-color: var(--color-white);
+    border-color: var(--color-status-pending-border);
+}
+
+.detail-lowongan-page .response-message-card[hidden] {
+    display: none !important;
+}
+
+/* Tablet dan HP */
+@media (max-width: 900px) {
+    .lowongan-saya-page .dashboard-container {
+        padding: 26px 22px;
+    }
+
+    .lowongan-saya-page .job-card {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+        padding: 18px;
+    }
+
+    .lowongan-saya-page .job-card-left {
+        width: 100%;
+    }
+
+    .lowongan-saya-page .job-card-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .lowongan-saya-page .dashboard-container {
+        padding: 22px 16px;
+        border-radius: 12px;
+    }
+
+    .lowongan-saya-page .header-section {
+        gap: 10px;
+    }
+
+    .lowongan-saya-page .page-title {
+        font-size: 1.25rem;
+    }
+
+    .lowongan-saya-page .section-title {
+        font-size: 1.05rem;
+    }
+
+    .lowongan-saya-page .job-card-left {
+        gap: 12px;
+    }
+
+    .lowongan-saya-page .job-icon-box {
+        width: 46px;
+        height: 46px;
+        font-size: 1.2rem;
+    }
+
+    .lowongan-saya-page .job-details .job-name {
+        font-size: 1rem;
+    }
+
+    .lowongan-saya-page .job-details .job-requirements {
+        font-size: 0.8rem;
+    }
+
+    .lowongan-saya-page .job-card-right {
+        gap: 8px;
+    }
+
+    .lowongan-saya-page .btn-detail,
+    .lowongan-saya-page .btn-delete {
+        flex: 1;
+        padding: 9px 12px;
+    }
+
+    .lowongan-saya-page .modal-box {
+        padding: 28px 20px;
+    }
+
+    .lowongan-saya-page .modal-btn-container {
+        flex-direction: column-reverse;
+    }
+
+    .lowongan-saya-page .btn-modal-cancel,
+    .lowongan-saya-page .btn-modal-confirm {
+        width: 100%;
+    }
+}

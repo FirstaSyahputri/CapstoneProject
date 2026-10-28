@@ -1,0 +1,726 @@
+.detail-lowongan-page,
+.detail-lowongan-page *,
+.detail-lowongan-page *::before,
+.detail-lowongan-page *::after {
+    box-sizing: border-box;
+}
+
+.detail-lowongan-page [hidden] {
+    display: none !important;
+}
+
+/* Kontainer utama */
+.detail-lowongan-page {
+    width: 100%;
+    min-width: 0;
+    color: var(--color-n-900);
+    font-family: 'Inter', sans-serif;
+}
+
+.detail-lowongan-page .dashboard-container {
+    width: 100%;
+    max-width: 1000px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 36px 40px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: var(--page-radius);
+    box-shadow: var(--page-shadow);
+}
+
+/* Header halaman */
+.detail-lowongan-page .header-section {
+    margin-bottom: 16px;
+}
+
+.detail-lowongan-page .page-title {
+    margin: 0;
+    color: var(--color-n-900);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.detail-lowongan-page .divider {
+    height: 1px;
+    margin-bottom: 28px;
+    background-color: var(--color-n-300);
+}
+
+/* Notifikasi */
+.detail-lowongan-page .success-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background-color: var(--color-status-interview-bg);
+    border: 1px solid var(--color-status-interview-border);
+    border-radius: 10px;
+    color: var(--color-n-700);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.detail-lowongan-page .success-message i {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--color-success);
+}
+
+.detail-lowongan-page .validation-summary {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background-color: var(--color-status-pending-bg);
+    border: 1px solid var(--color-status-pending-border);
+    border-radius: 10px;
+    color: var(--color-n-700);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.detail-lowongan-page .validation-summary ul {
+    margin: 6px 0 0;
+    padding-left: 20px;
+}
+
+.detail-lowongan-page .validation-summary li {
+    margin-bottom: 3px;
+}
+
+/* Grup form */
+.detail-lowongan-page .form-group {
+    min-width: 0;
+    margin-bottom: 24px;
+}
+
+.detail-lowongan-page .form-label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--color-n-900);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* Tampilan nilai saat mode baca */
+.detail-lowongan-page .view-mode {
+    min-width: 0;
+    padding: 12px 16px;
+    background-color: var(--color-n-100);
+    border: 1px solid var(--color-n-300);
+    border-radius: 12px;
+    color: var(--color-n-700);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/* Input dan textarea */
+.detail-lowongan-page .form-input,
+.detail-lowongan-page .form-textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 16px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: 12px;
+    color: var(--color-n-900);
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.detail-lowongan-page .form-input:focus,
+.detail-lowongan-page .form-textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-prim-pale);
+}
+
+.detail-lowongan-page .form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.detail-lowongan-page .alamat-wrap {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Gambar peta */
+.detail-lowongan-page .alamat-wrap .peta {
+    display: block;
+    flex: 0 0 150px;
+    width: 150px;
+    max-width: 35%;
+    min-width: 0;
+    min-height: 100px;
+    align-self: stretch;
+    object-fit: cover;
+    object-position: center;
+    background-color: var(--color-n-100);
+    border: 1px solid var(--color-n-300);
+    border-radius: 12px;
+}
+
+/* Alamat saat mode baca */
+.detail-lowongan-page .alamat-wrap .alamat-value {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 16px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: 12px;
+    color: var(--color-n-700);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/* Textarea alamat saat mode ubah */
+.detail-lowongan-page .alamat-wrap .form-textarea {
+    flex: 1;
+    min-width: 0;
+    min-height: 120px;
+    margin: 0;
+}
+
+.detail-lowongan-page .badge-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-width: 0;
+}
+
+.detail-lowongan-page .doc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+    padding: 8px 16px;
+    background-color: var(--color-n-100);
+    border: 1px solid var(--color-n-300);
+    border-radius: 50px;
+    color: var(--color-n-700);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.detail-lowongan-page .doc-badge > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.detail-lowongan-page .doc-badge > i {
+    flex-shrink: 0;
+}
+
+.detail-lowongan-page .remove-document {
+    flex-shrink: 0;
+    margin-left: 4px;
+    padding: 0 2px;
+    background-color: transparent;
+    border: none;
+    color: var(--color-danger);
+    font-family: inherit;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.detail-lowongan-page .remove-document:hover {
+    opacity: 0.75;
+}
+
+/* Input tambah dokumen */
+.detail-lowongan-page .doc-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.detail-lowongan-page .doc-input-wrapper .form-input {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.detail-lowongan-page .doc-input-wrapper .btn-action {
+    flex-shrink: 0;
+    padding: 12px 24px;
+    white-space: nowrap;
+}
+
+.detail-lowongan-page #errorMsgDokumen {
+    display: block;
+    margin-top: 8px;
+    color: var(--color-danger);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.detail-lowongan-page #view-status {
+    font-weight: 600;
+}
+
+.detail-lowongan-page #view-status.status-aktif {
+    color: var(--color-success);
+}
+
+.detail-lowongan-page #view-status.status-nonaktif {
+    color: var(--color-danger);
+}
+
+/* Switch status */
+.detail-lowongan-page .switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.detail-lowongan-page .switch input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.detail-lowongan-page .switch .slider {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-n-300);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.detail-lowongan-page .switch .slider::before {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    content: '';
+    transition: transform 0.2s ease;
+}
+
+.detail-lowongan-page .switch input:checked + .slider {
+    background-color: var(--color-success);
+}
+
+.detail-lowongan-page .switch input:checked + .slider::before {
+    transform: translateX(22px);
+}
+
+.detail-lowongan-page .form-action-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 36px;
+}
+
+.detail-lowongan-page .btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 32px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: 50px;
+    color: var(--color-n-700);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                color 0.2s ease,
+                opacity 0.2s ease;
+}
+
+.detail-lowongan-page .btn-ubah {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.detail-lowongan-page .btn-ubah:hover {
+    background-color: var(--color-prim-light);
+    border-color: var(--color-prim-light);
+    color: var(--color-n-900);
+}
+
+.detail-lowongan-page .btn-kembali:hover {
+    background-color: var(--color-n-100);
+    border-color: var(--color-n-300);
+    color: var(--color-n-900);
+}
+
+.detail-lowongan-page .btn-simpan,
+.detail-lowongan-page .btn-save-inline {
+    background-color: var(--color-success);
+    border: 1px solid var(--color-success);
+    color: var(--color-white);
+}
+
+.detail-lowongan-page .btn-simpan:hover,
+.detail-lowongan-page .btn-save-inline:hover {
+    opacity: 0.85;
+}
+
+.detail-lowongan-page .form-input-inline {
+    width: 160px;
+    max-width: 100%;
+    padding: 8px 14px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: 50px;
+    color: var(--color-n-900);
+    font-family: inherit;
+    font-size: 0.875rem;
+    outline: none;
+}
+
+.detail-lowongan-page .form-input-inline:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-prim-pale);
+}
+
+.detail-lowongan-page .btn-save-inline,
+.detail-lowongan-page .btn-cancel-inline {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.detail-lowongan-page .btn-cancel-inline {
+    background-color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+    color: var(--color-white);
+}
+
+.detail-lowongan-page .btn-cancel-inline:hover {
+    opacity: 0.85;
+}
+
+/* =========================================================
+   MODAL KONFIRMASI
+   ========================================================= */
+
+.detail-lowongan-page .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+    background-color: var(--color-overlay, var(--color-n-700));
+}
+
+.detail-lowongan-page .modal-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: 20px;
+    box-shadow: var(--page-shadow);
+    text-align: center;
+}
+
+.detail-lowongan-page .modal-icon-container {
+    margin-bottom: 20px;
+    color: var(--color-secondary);
+    font-size: 3rem;
+}
+
+.detail-lowongan-page .modal-title {
+    margin: 0 0 12px;
+    color: var(--color-n-900);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.detail-lowongan-page .modal-subtitle {
+    margin: 0 0 28px;
+    color: var(--color-n-500);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.detail-lowongan-page .modal-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.detail-lowongan-page .btn-modal-cancel,
+.detail-lowongan-page .modal-btn-ok {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 16px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                opacity 0.2s ease;
+}
+
+.detail-lowongan-page .btn-modal-cancel {
+    background-color: var(--color-n-100);
+    border-color: var(--color-n-300);
+    color: var(--color-n-900);
+}
+
+.detail-lowongan-page .btn-modal-cancel:hover {
+    background-color: var(--color-n-300);
+}
+
+.detail-lowongan-page .modal-btn-ok {
+    background-color: var(--color-success);
+    border-color: var(--color-success);
+    color: var(--color-white);
+}
+
+.detail-lowongan-page .modal-btn-ok:hover {
+    opacity: 0.85;
+}
+
+.detail-lowongan-page .response-message-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 0 24px;
+    padding: 18px 48px 18px 20px;
+
+    background: #fff1f0;
+    border: 1px solid #f0b8b5;
+    border-left: 5px solid #d9363e;
+    border-radius: 12px;
+
+    color: #842029;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    box-shadow: 0 4px 14px rgba(120, 20, 20, 0.07);
+
+    animation: responseAlertIn 0.25s ease-out;
+}
+
+.detail-lowongan-page .response-message-card.success {
+    background: #f0fdf4;
+    border-color: #a7dfb5;
+    border-left-color: #198754;
+    color: #166534;
+}
+
+.detail-lowongan-page .response-message-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #fbd8d5;
+    color: #c62828;
+    font-size: 19px;
+}
+
+.detail-lowongan-page .response-message-card.success
+.response-message-icon {
+    background: #d9f5e2;
+    color: #198754;
+}
+
+.detail-lowongan-page .response-message-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.detail-lowongan-page .response-message-content strong {
+    display: block;
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.detail-lowongan-page .response-message-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.detail-lowongan-page .response-message-content ul {
+    margin: 6px 0 0;
+    padding-left: 20px;
+}
+
+.detail-lowongan-page .response-message-content li {
+    margin: 4px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.detail-lowongan-page .response-message-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: inherit;
+
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.detail-lowongan-page .response-message-close:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.detail-lowongan-page .response-message-card[hidden] {
+    display: none !important;
+}
+
+@keyframes responseAlertIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-lowongan-page button:focus-visible,
+.detail-lowongan-page a:focus-visible,
+.detail-lowongan-page input:focus-visible,
+.detail-lowongan-page textarea:focus-visible {
+    outline: 3px solid var(--color-prim-light);
+    outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+    .detail-lowongan-page .dashboard-container {
+        padding: 30px 26px;
+    }
+
+    .detail-lowongan-page .alamat-wrap .peta {
+        flex-basis: 125px;
+        width: 125px;
+    }
+}
+
+@media (max-width: 600px) {
+    .detail-lowongan-page .dashboard-container {
+        padding: 24px 18px;
+        border-radius: 12px;
+    }
+
+    .detail-lowongan-page .page-title {
+        font-size: 1.3rem;
+    }
+
+    .detail-lowongan-page .doc-input-wrapper {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .detail-lowongan-page .doc-input-wrapper .btn-action {
+        width: 100%;
+    }
+
+    .detail-lowongan-page .form-action-container .btn-action {
+        padding: 10px 22px;
+    }
+
+    .detail-lowongan-page .modal-card {
+        padding: 30px 20px;
+    }
+
+    .detail-lowongan-page .alamat-wrap {
+        flex-direction: column;
+    }
+
+    .detail-lowongan-page .alamat-wrap .peta {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        height: 150px;
+        min-height: 150px;
+    }
+
+    .detail-lowongan-page .alamat-wrap .alamat-value,
+    .detail-lowongan-page .alamat-wrap .form-textarea {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .detail-lowongan-page .modal-btn-container {
+        flex-direction: column-reverse;
+    }
+
+    .detail-lowongan-page .btn-modal-cancel,
+    .detail-lowongan-page .modal-btn-ok {
+        width: 100%;
+    }
+}
