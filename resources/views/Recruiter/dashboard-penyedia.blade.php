@@ -1,102 +1,92 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Penyedia - JobsKuy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="{{ asset('css/dashboard-penyedia.css') }}">
-</head>
-<body>
+@extends('Recruiter.layout')
 
-    <div class="app-layout">
-        <main class="main-content">
-            <div class="dashboard-container">
-                <header class="topbar">
-                    <div class="topbar-left">
-                        <h1>Dashboard</h1>
-                    </div>
-                </header>
+@push('styles')
+    <link href="{{ asset('css/dashboard-penyedia.css') }}" rel="stylesheet">
+@endpush
 
-                <div class="top-section-grid">
-                    <div class="stats-group">
-                        <div class="stat-card">
-                            <div class="stat-info">
-                                <span class="stat-label">Daftar Pelamar</span>
-                                <span class="stat-number">{{ $jumlahPelamar }}</span>
-                            </div>
-                            <div class="stat-icon">
-                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                            </div>
-                        </div>
+@section('content')
+    <div class="dashboard-container">
 
-                        <div class="stat-card">
-                            <div class="stat-info">
-                                <span class="stat-label">Lowongan Kerja Saya</span>
-                                <span class="stat-number">{{ $jumlahLowongan }}</span>
-                            </div>
-                            <div class="stat-icon">
-                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                            </div>
-                        </div>
+        <div class="top-section-grid">
+            <div class="stats-group">
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="stat-label">Daftar Pelamar</span>
+                        <span class="stat-number">{{ $jumlahPelamar }}</span>
                     </div>
 
-                    <div class="action-group">
-                        <a href="{{ route('buat-lowongan') }}" class="btn-primary">
-                            <i class="ph ph-plus-circle" style="font-size: 20px; vertical-align: middle; margin-right: 6px;"></i>
-                            Buat Lowongan Baru
-                        </a>
+                    <div class="stat-icon">
+                        <svg width="24" height="24" fill="none"
+                             stroke="currentColor" stroke-width="2"
+                             viewBox="0 0 24 24">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
                     </div>
                 </div>
 
-                <section class="review-section">
-                    <h3>Review Pelamar :</h3>
-
-                    <div class="applicant-grid">
-                        <div class="applicant-card">
-                            <div class="applicant-left">
-                                <img src="{{ asset('images/budi.png') }}" alt="Budi Santoso" class="applicant-img">
-                                <div class="applicant-info">
-                                    <h4>Budi Santoso</h4>
-                                    <p class="role">Pelamar Satpam</p>
-                                    <p class="requirements">Ijazah & SKCK</p>
-                                </div>
-                            </div>
-                            <span class="arrow">&rsaquo;</span>
-                        </div>
-
-                        <!-- Item Pelamar 2 -->
-                        <div class="applicant-card">
-                            <div class="applicant-left">
-                                <img src="{{ asset('images/faris.png') }}" alt="Faris Effendi" class="applicant-img">
-                                <div class="applicant-info">
-                                    <h4>Faris Effendi</h4>
-                                    <p class="role">Pelamar Kasir</p>
-                                    <p class="requirements">Ijazah</p>
-                                </div>
-                            </div>
-                            <span class="arrow">&rsaquo;</span>
-                        </div>
-
-                        <div class="applicant-card">
-                            <div class="applicant-left">
-                                <img src="{{ asset('images/rudiansyah.png') }}" alt="Rudiansyah" class="applicant-img">
-                                <div class="applicant-info">
-                                    <h4>Rudiansyah</h4>
-                                    <p class="role">Pelamar Kasir</p>
-                                    <p class="requirements">Ijazah & SKCK</p>
-                                </div>
-                            </div>
-                            <span class="arrow">&rsaquo;</span>
-                        </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="stat-label">Lowongan Kerja Saya</span>
+                        <span class="stat-number">{{ $jumlahLowongan }}</span>
                     </div>
-                </section>
-            </div>
-        </main>
-    </div>
 
-</body>
-</html>
+                    <div class="stat-icon">
+                        <svg width="24" height="24" fill="none"
+                             stroke="currentColor" stroke-width="2"
+                             viewBox="0 0 24 24">
+                            <rect x="2" y="7" width="20" height="14"
+                                  rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <section class="review-section">
+            <h3>Review Pelamar</h3>
+
+            <div class="applicant-grid">
+                @forelse ($daftarPelamar as $app)
+                    <a
+                        href="{{ route('recruiter.pelamar.show', $app) }}"
+                        class="applicant-card"
+                    >
+                        <div class="applicant-left">
+                            <div class="applicant-img applicant-placeholder">
+                                <i class="ph ph-user"></i>
+                            </div>
+
+                            <div class="applicant-info">
+                                <h4>
+                                    {{ $app->applicant->name
+                                        ?? $app->applicant->nama
+                                        ?? 'Nama pelamar belum tersedia' }}
+                                </h4>
+
+                                <p class="role">
+                                    {{ $app->jobListing->title
+                                        ?? $app->jobListing->nama_lowongan
+                                        ?? 'Lowongan tidak tersedia' }}
+                                </p>
+
+                                <p class="requirements">
+                                    Status: {{ ucfirst($app->status ?? 'Menunggu') }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                @empty
+                    <p>Belum ada pelamar yang masuk.</p>
+                @endforelse
+            </div>
+        </section>
+
+    </div>
+@endsection

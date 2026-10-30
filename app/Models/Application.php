@@ -14,7 +14,11 @@ class Application extends Model
         'status',
         'interview_date',
         'interview_time',
+        'interview_start_time',
+        'interview_end_time',
         'interview_location',
+        'meeting_type',
+        'interview_notes',
         'rejection_note',
     ];
 

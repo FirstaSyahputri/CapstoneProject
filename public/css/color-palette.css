@@ -26,7 +26,7 @@
     --page-shadow: 0 4px 16px rgba(26, 29, 36, 0.05);
 
     
-    /* Status palette */
+    
     --color-status-pending: var(--color-secondary);
     --color-status-pending-bg: #FFF4E5;
     --color-status-pending-border: #FAD7A0;

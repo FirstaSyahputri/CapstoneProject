@@ -35,9 +35,14 @@ class RecruiterJobController extends Controller
         int $jobListing
     ): JsonResponse|RedirectResponse {
         // Ambil lowongan beserta syarat dokumennya.
-        $job = JobListing::with('syaratDokumen')
-            ->findOrFail($jobListing);
+        $recruiterId = $request->user()?->getAuthIdentifier();
 
+        abort_unless($recruiterId, 401, 'Silakan login terlebih dahulu.');
+
+        $job = JobListing::with('syaratDokumen')
+            ->where('recruiter_id', $recruiterId)
+            ->findOrFail($jobListing);
+            
         // Validasi menggunakan nama input dari form Blade.
         $validated = $request->validate([
             'namaPekerjaan' => [

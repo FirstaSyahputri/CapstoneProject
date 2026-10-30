@@ -67,7 +67,7 @@ body {
     opacity: 1 !important;
 }
 
-/* Profil recruiter */
+
 
 .sidebar-profile {
     display: flex;
@@ -112,7 +112,7 @@ body {
     margin-top: 3px;
 }
 
-/* Navigasi sidebar */
+
 
 .sidebar-nav {
     display: flex;
@@ -391,7 +391,7 @@ body {
     display: none;
 }
 
-/* Kembali */
+
 .back-navigation {
     margin-bottom: 20px;
 }

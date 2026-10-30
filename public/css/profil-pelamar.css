@@ -37,8 +37,8 @@
     line-height: 1.6;
 }
 
-/* Tombol Kembali */
-/* Tombol Kembali */
+
+
 .btn-back {
     display: inline-flex;
     align-items: center;
@@ -658,7 +658,7 @@
     background: var(--color-danger);
 }
 
-/* MODAL */
+
 .custom-modal {
     position: fixed;
     z-index: 1100;
@@ -880,7 +880,7 @@ body.modal-open {
 }
 
 
-/* RESPONSIVE */
+
 @media (max-width: 1199.98px) {
     .profile-page {
         padding: 22px;
@@ -980,11 +980,6 @@ body.modal-open {
     }
 }
 
-
-/* =========================================================
-   STATUS LAMARAN - TIMELINE DI BAWAH KONTAK CEPAT
-   ========================================================= */
-
 .status-progress-card {
     margin-top: 24px;
     padding-top: 22px;
@@ -1082,7 +1077,7 @@ body.modal-open {
     margin-top: 0;
 }
 
-/* Daftar progres */
+
 
 .status-progress-list {
     display: flex;
@@ -1168,7 +1163,7 @@ body.modal-open {
 
 
 
-/* FORM UBAH STATUS LAMARAN */
+
 .status-edit-card {
     margin-top: 24px;
     padding: 18px;
@@ -1279,6 +1274,34 @@ body.modal-open {
 .status-edit-form .btn-save-status:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
+}
+
+.interview-time-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    align-items: start;
+}
+
+.interview-time-row .form-group {
+    min-width: 0;
+}
+
+.interview-time-row .form-label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.interview-time-row .form-control {
+    width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 400px) {
+    .interview-time-row {
+        gap: 10px;
+    }
 }
 
 @media (max-width: 575.98px) {

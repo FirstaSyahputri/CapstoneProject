@@ -1,328 +1,536 @@
 
-* {
-    margin: 0;
-    padding: 0;
+/* =========================================================
+   RESET DAN DASAR HALAMAN
+   ========================================================= */
+
+.buat-lowongan-page,
+.buat-lowongan-page *,
+.buat-lowongan-page *::before,
+.buat-lowongan-page *::after {
     box-sizing: border-box;
 }
 
-[hidden] {
+.buat-lowongan-page [hidden] {
     display: none !important;
 }
 
-body {
+.buat-lowongan-page {
+    width: 100%;
+    min-width: 0;
+    padding: 20px 16px;
     font-family: 'Inter', sans-serif;
-    background: var(--color-white);
     color: var(--color-n-900);
 }
+
+/* =========================================================
+   FORM UTAMA - SATU BORDER UNTUK SELURUH FORM
+   ========================================================= */
 
 .buat-lowongan-page form {
     width: 100%;
     max-width: 1000px;
+    min-width: 0;
     margin: 0 auto;
-    padding: 16px 24px 32px;
+    padding: 24px 28px 28px;
+
+    background: var(--color-white);
+    border: 1px solid var(--color-n-300);
+    border-radius: 12px;
+
+    box-shadow: var(--page-shadow);
 }
 
-.topbar {
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.buat-lowongan-page .topbar {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding-bottom: 12px;
-    margin-bottom: 16px;
+
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+
     border-bottom: 1px solid var(--color-n-300);
 }
 
 .buat-lowongan-page .topbar h1 {
     margin: 0;
+    color: var(--color-n-900);
     font-size: 24px;
     font-weight: 700;
     line-height: 1.4;
-    color: var(--color-n-900);
-}
-
-.field {
-    margin-bottom: 18px;
-}
-
-.field > label {
-    display: block;
-    font-weight: bold;
-    color: var(--color-n-900);
-    margin-bottom: 6px;
-}
-
-input[type="text"],
-input[type="number"],
-textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--color-n-300);
-    border-radius: 8px;
-    background: var(--color-white);
-    color: var(--color-n-900);
-    box-shadow: 0 2px 6px rgba(26, 29, 36, 0.08);
-    font-size: 14px;
-    font-family: inherit;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
-}
-
-textarea {
-    resize: vertical;
-}
-
-.invalid {
-    border-color: var(--color-danger) !important;
-}
-
-.error {
-    display: block;
-    color: var(--color-danger);
-    font-size: 12px;
-    margin-top: 4px;
-    min-height: 14px;
-}
-
-.baris {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-}
-
-.alamat-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.peta {
-    width: 100%;
-    height: 100%;
-    min-height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Syarat dokumen */
-.dokumen-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 8px;
-}
-
-.chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--color-prim-pale);
-    border: 1px solid var(--color-prim-light);
-    color: var(--color-n-700);
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 13px;
     overflow-wrap: anywhere;
 }
 
-.chip button {
-    border: none;
-    background: none;
-    color: var(--color-danger);
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1;
+/* =========================================================
+   FIELD DAN LABEL
+   ========================================================= */
+
+.buat-lowongan-page .field {
+    min-width: 0;
+    margin-bottom: 16px;
 }
 
-.chip button:hover {
+.buat-lowongan-page .field > label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--color-n-900);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   INPUT DAN TEXTAREA
+   ========================================================= */
+
+.buat-lowongan-page input[type="text"],
+.buat-lowongan-page input[type="number"],
+.buat-lowongan-page textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+
+    border: 1px solid var(--color-n-300);
+    border-radius: 8px;
+
+    background: var(--color-white);
+    color: var(--color-n-900);
+
+    box-shadow: 0 1px 3px rgba(26, 29, 36, 0.05);
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.buat-lowongan-page input[type="text"]:focus,
+.buat-lowongan-page input[type="number"]:focus,
+.buat-lowongan-page textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.12);
+}
+
+.buat-lowongan-page textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.buat-lowongan-page .invalid {
+    border-color: var(--color-danger) !important;
+}
+
+.buat-lowongan-page .error {
+    display: block;
+    min-height: 14px;
+    margin-top: 4px;
+
+    color: var(--color-danger);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   GRID DUA KOLOM
+   ========================================================= */
+
+.buat-lowongan-page .baris {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 0;
+    align-items: start;
+}
+
+.buat-lowongan-page .baris .field {
+    min-width: 0;
+}
+
+/* =========================================================
+   ALAMAT DAN PETA
+   ========================================================= */
+
+.buat-lowongan-page .alamat-wrap {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.8fr) minmax(0, 1.2fr);
+    gap: 14px;
+
+    width: 100%;
+    min-width: 0;
+    align-items: stretch;
+}
+
+.buat-lowongan-page .peta {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    object-fit: cover;
+
+    border: 1px solid var(--color-n-300);
+    border-radius: 8px;
+
+    background: var(--color-n-100);
+}
+
+/* =========================================================
+   SYARAT DOKUMEN
+   ========================================================= */
+
+.buat-lowongan-page .dokumen-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8px;
+
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 8px;
+}
+
+.buat-lowongan-page .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+    max-width: 100%;
+    min-width: 0;
+    padding: 6px 12px;
+
+    background: var(--color-prim-pale);
+    border: 1px solid var(--color-prim-light);
+    border-radius: 8px;
+
+    color: var(--color-n-700);
+    font-size: 13px;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+.buat-lowongan-page .chip button {
+    flex-shrink: 0;
+    padding: 0;
+
+    border: none;
+    background: none;
+
+    color: var(--color-danger);
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.buat-lowongan-page .chip button:hover {
     opacity: 0.75;
 }
 
-.dokumen-tambah {
+
+
+.buat-lowongan-page .dokumen-tambah {
     display: flex;
+    align-items: center;
     gap: 8px;
+
+    width: 100%;
+    min-width: 0;
 }
 
-.dokumen-tambah input {
+.buat-lowongan-page .dokumen-tambah input {
     flex: 1;
     min-width: 0;
 }
 
-.dokumen-tambah button {
+.buat-lowongan-page .dokumen-tambah button {
+    flex-shrink: 0;
     padding: 10px 16px;
+
     border: 1px solid var(--color-prim-light);
     border-radius: 8px;
+
     background: var(--color-prim-pale);
     color: var(--color-primary);
+
+    font-family: inherit;
+    font-size: 14px;
     font-weight: 600;
+
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-.dokumen-tambah button:hover {
+.buat-lowongan-page .dokumen-tambah button:hover {
     background: var(--color-prim-light);
 }
 
-/* Toggle status */
-.switch {
+/* =========================================================
+   TOGGLE STATUS
+   ========================================================= */
+
+.buat-lowongan-page .switch {
     position: relative;
     display: inline-block;
-    width: 52px;
-    height: 28px;
+    width: 48px;
+    height: 26px;
+    vertical-align: middle;
 }
 
-.switch input {
-    opacity: 0;
+.buat-lowongan-page .switch input {
     width: 0;
     height: 0;
+    opacity: 0;
 }
 
-.slider {
+.buat-lowongan-page .slider {
     position: absolute;
     inset: 0;
+
     background: var(--color-n-300);
     border-radius: 28px;
+
     cursor: pointer;
-    transition: 0.2s;
+    transition: background 0.2s ease;
 }
 
-.slider::before {
-    content: "";
+.buat-lowongan-page .slider::before {
     position: absolute;
-    width: 22px;
-    height: 22px;
-    left: 3px;
     top: 3px;
+    left: 3px;
+
+    width: 20px;
+    height: 20px;
+
     background: var(--color-white);
     border-radius: 50%;
-    transition: 0.2s;
+
+    content: "";
+    transition: transform 0.2s ease;
 }
 
-.switch input:checked + .slider {
+.buat-lowongan-page .switch input:checked + .slider {
     background: var(--color-success);
 }
 
-.switch input:checked + .slider::before {
-    transform: translateX(24px);
+.buat-lowongan-page .switch input:checked + .slider::before {
+    transform: translateX(22px);
 }
 
-.switch input:focus-visible + .slider {
+.buat-lowongan-page .switch input:focus-visible + .slider {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
 }
 
-/* Tombol pasang lowongan */
-.btn-pasang {
+/* =========================================================
+   TOMBOL PASANG LOWONGAN
+   ========================================================= */
+
+.buat-lowongan-page .btn-pasang {
+    display: block;
     width: 100%;
+    margin-top: 12px;
     padding: 12px;
+
     border: 1px solid var(--color-primary);
     border-radius: 8px;
+
     background: var(--color-primary);
     color: var(--color-white);
+
+    font-family: inherit;
     font-size: 15px;
     font-weight: 600;
+
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-.btn-pasang:hover {
+.buat-lowongan-page .btn-pasang:hover {
     background: var(--color-prim-light);
     border-color: var(--color-prim-light);
     color: var(--color-n-900);
 }
 
-.btn-pasang:disabled {
+.buat-lowongan-page .btn-pasang:disabled {
     opacity: 0.6;
     cursor: not-allowed;
 }
 
-/* Pop-up konfirmasi */
-.modal-overlay {
+/* =========================================================
+   POP-UP KONFIRMASI
+   ========================================================= */
+
+.buat-lowongan-page .modal-overlay {
     position: fixed;
     inset: 0;
-    padding: 20px;
-    background: rgba(26, 29, 36, 0.5);
+    z-index: 1000;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+
+    background: rgba(26, 29, 36, 0.5);
 }
 
-.modal {
-    background: var(--color-white);
-    color: var(--color-n-900);
+.buat-lowongan-page .modal {
+    width: 100%;
+    max-width: 320px;
     padding: 24px;
+
+    background: var(--color-white);
     border: 1px solid var(--color-n-300);
     border-radius: 10px;
+
+    color: var(--color-n-900);
     text-align: center;
-    max-width: 320px;
-    width: 100%;
+
     box-shadow: var(--page-shadow);
 }
 
-.ikon-centang {
+.buat-lowongan-page .ikon-centang {
     width: 56px;
     height: 56px;
     margin: 0 auto 12px;
+
     background: var(--color-success);
     color: var(--color-white);
+
     border-radius: 50%;
     font-size: 30px;
     line-height: 56px;
 }
 
-.modal h2 {
-    font-size: 18px;
+.buat-lowongan-page .modal h2 {
     margin-bottom: 8px;
     color: var(--color-n-900);
+    font-size: 18px;
 }
 
-.modal p {
-    font-size: 13px;
+.buat-lowongan-page .modal p {
     margin-bottom: 16px;
     color: var(--color-n-700);
+    font-size: 13px;
+    line-height: 1.5;
 }
 
-.modal button {
+.buat-lowongan-page .modal button {
     padding: 8px 32px;
+
     border: 1px solid var(--color-success);
     border-radius: 6px;
+
     background: var(--color-success);
     color: var(--color-white);
+
+    font-family: inherit;
     font-weight: 600;
+
     cursor: pointer;
     transition: filter 0.2s ease;
 }
 
-.modal button:hover {
+.buat-lowongan-page .modal button:hover {
     filter: brightness(0.92);
 }
 
-/* Tampilan HP */
-@media (max-width: 700px) {
-    .buat-lowongan-page form {
-        padding: 16px 16px 28px;
+/* =========================================================
+   RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .buat-lowongan-page {
+        padding: 16px 12px;
     }
 
-    .baris,
-    .alamat-wrap {
+    .buat-lowongan-page form {
+        padding: 22px 22px 26px;
+    }
+
+    .buat-lowongan-page .baris {
+        column-gap: 14px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .buat-lowongan-page {
+        padding: 12px 10px;
+    }
+
+    .buat-lowongan-page form {
+        padding: 18px 16px 22px;
+        border-radius: 10px;
+    }
+
+    .buat-lowongan-page .topbar {
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+    }
+
+    .buat-lowongan-page .topbar h1 {
+        font-size: 21px;
+    }
+
+    .buat-lowongan-page .baris {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
+
+    .buat-lowongan-page .alamat-wrap {
         grid-template-columns: 1fr;
     }
 
-    .peta {
+    .buat-lowongan-page .peta {
+        width: 100%;
         height: 160px;
+        min-height: 160px;
     }
 
-    .dokumen-tambah {
+    .buat-lowongan-page .dokumen-tambah {
+        align-items: stretch;
         flex-direction: column;
     }
 
-    .dokumen-tambah button {
+    .buat-lowongan-page .dokumen-tambah button {
         width: 100%;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE MOBILE KECIL
+   ========================================================= */
+
+@media (max-width: 380px) {
+    .buat-lowongan-page {
+        padding: 10px 8px;
+    }
+
+    .buat-lowongan-page form {
+        padding: 16px 12px 20px;
+    }
+
+    .buat-lowongan-page .topbar h1 {
+        font-size: 19px;
+    }
+
+    .buat-lowongan-page .modal {
+        padding: 20px;
     }
 }

@@ -76,10 +76,10 @@ class LowonganController extends Controller
             ]);
         }
 
-        $recruiterId = $request->user()?->id;
+        $recruiterId = \App\Models\User::query()->value('id');
 
         if (!$recruiterId) {
-            abort(401, 'Silakan login terlebih dahulu.');
+            abort(500, 'Belum ada data recruiter pada tabel users.');
         }
 
         DB::transaction(function () use (
@@ -106,7 +106,7 @@ class LowonganController extends Controller
         });
 
         return redirect()
-            ->route('recruiter.lowongan.create')
+            ->route('recruiter.lowongan.index')
             ->with('success', 'Lowongan berhasil disimpan.');
     }
 }

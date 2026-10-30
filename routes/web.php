@@ -9,9 +9,10 @@ use App\Http\Controllers\Recruiter\RecruiterJobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicantController;
 
-Route::get('/buat-lowongan', function () {
-    return view('Recruiter.buat-lowongan');
-});
+Route::get('/buat-lowongan', [LowonganController::class, 'create'])
+    ->name('buat-lowongan'
+);
+
 Route::get('/profil-pelamar', function () {
     return view('Recruiter.profil-pelamar');
 });
