@@ -1,9 +1,3 @@
-
-/* =========================================================
-   DASHBOARD RECRUITER - JOBSKUY
-   Mengikuti global color palette
-========================================================= */
-
 .dashboard-container,
 .dashboard-container * {
     box-sizing: border-box;
@@ -26,10 +20,6 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-/* =========================================================
-   DASHBOARD TITLE
-========================================================= */
-
 .dashboard-title {
     margin: 0 0 8px;
     color: var(--color-n-900, #1A1D24);
@@ -44,10 +34,6 @@
     font-size: 14px;
     line-height: 1.6;
 }
-
-/* =========================================================
-   STATISTICS & ACTION BUTTON
-========================================================= */
 
 .top-section-grid {
     display: grid;
@@ -129,10 +115,6 @@
     height: 23px;
 }
 
-/* =========================================================
-   BUTTON BUAT LOWONGAN BARU
-========================================================= */
-
 .action-group {
     display: flex;
     align-items: flex-start;
@@ -196,10 +178,6 @@
     outline: 3px solid var(--color-prim-light, #C6E2F7);
     outline-offset: 3px;
 }
-
-/* =========================================================
-   REVIEW PELAMAR
-========================================================= */
 
 .review-section {
     margin-top: 34px;
@@ -333,10 +311,6 @@ a.applicant-card:hover .arrow {
     transform: translateX(3px);
 }
 
-/* =========================================================
-   EMPTY STATE
-========================================================= */
-
 .empty-state {
     padding: 36px 20px;
     color: var(--color-n-500, #7A8494);
@@ -366,10 +340,6 @@ a.applicant-card:hover .arrow {
     line-height: 1.6;
 }
 
-/* =========================================================
-   TABLET
-========================================================= */
-
 @media (max-width: 1024px) {
     .top-section-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -384,10 +354,6 @@ a.applicant-card:hover .arrow {
         min-height: 52px;
     }
 }
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 @media (max-width: 640px) {
     .dashboard-container {
@@ -465,10 +431,6 @@ a.applicant-card:hover .arrow {
         font-size: 11px;
     }
 }
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
     .stat-card,
