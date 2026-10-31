@@ -8,6 +8,7 @@
     <div class="dashboard-container">
 
         <div class="top-section-grid">
+
             <div class="stats-group">
 
                 <div class="stat-card">
@@ -17,9 +18,8 @@
                     </div>
 
                     <div class="stat-icon">
-                        <svg width="24" height="24" fill="none"
-                             stroke="currentColor" stroke-width="2"
-                             viewBox="0 0 24 24">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
@@ -33,17 +33,26 @@
                     </div>
 
                     <div class="stat-icon">
-                        <svg width="24" height="24" fill="none"
-                             stroke="currentColor" stroke-width="2"
-                             viewBox="0 0 24 24">
-                            <rect x="2" y="7" width="20" height="14"
-                                  rx="2" ry="2"></rect>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                             <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                         </svg>
                     </div>
                 </div>
 
             </div>
+
+            <a href="{{ route('recruiter.lowongan.create') }}" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 8v8"></path>
+                    <path d="M8 12h8"></path>
+                </svg>
+
+                <span>Buat Lowongan Baru</span>
+            </a>
 
         </div>
 
@@ -52,10 +61,7 @@
 
             <div class="applicant-grid">
                 @forelse ($daftarPelamar as $app)
-                    <a
-                        href="{{ route('recruiter.pelamar.show', $app) }}"
-                        class="applicant-card"
-                    >
+                    <a href="{{ route('recruiter.pelamar.show', $app) }}" class="applicant-card">
                         <div class="applicant-left">
                             <div class="applicant-img applicant-placeholder">
                                 <i class="ph ph-user"></i>
@@ -63,15 +69,11 @@
 
                             <div class="applicant-info">
                                 <h4>
-                                    {{ $app->applicant->name
-                                        ?? $app->applicant->nama
-                                        ?? 'Nama pelamar belum tersedia' }}
+                                    {{ $app->applicant->name ?? ($app->applicant->nama ?? 'Nama pelamar belum tersedia') }}
                                 </h4>
 
                                 <p class="role">
-                                    {{ $app->jobListing->title
-                                        ?? $app->jobListing->nama_lowongan
-                                        ?? 'Lowongan tidak tersedia' }}
+                                    {{ $app->jobListing->title ?? ($app->jobListing->nama_lowongan ?? 'Lowongan tidak tersedia') }}
                                 </p>
 
                                 <p class="requirements">
