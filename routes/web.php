@@ -1,4 +1,3 @@
-
 <?php
 
 use App\Http\Controllers\Recruiter\LowonganController;
@@ -7,18 +6,13 @@ use App\Http\Controllers\Recruiter\StatusLamaranController;
 use App\Http\Controllers\Recruiter\DashboardController;
 use App\Http\Controllers\Recruiter\RecruiterJobController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApplicantController;
 
 Route::get('/buat-lowongan', [LowonganController::class, 'create'])
-    ->name('buat-lowongan'
-);
+    ->name('buat-lowongan');
 
-Route::get('/profil-pelamar', function () {
-    return view('Recruiter.profil-pelamar');
-});
-Route::get('/daftar-pelamar', [ApplicantController::class, 'index'])
+Route::get('/daftar-pelamar', [PelamarController::class, 'index'])
     ->name('recruiter.pelamar');
-    
+
 Route::get('/', function () {
     return redirect()->route('recruiter.dashboard');
 })->name('home');
@@ -30,6 +24,7 @@ Route::prefix('recruiter')
         Route::get('/dashboard', [DashboardController::class, 'index'])
             ->name('dashboard');
 
+        // Lowongan
         Route::get('/lowongan', [RecruiterJobController::class, 'index'])
             ->name('lowongan.index');
 
@@ -64,12 +59,10 @@ Route::get('/dashboard-penyedia', [DashboardController::class, 'index'])
 Route::get('/lowongan-saya', [RecruiterJobController::class, 'index'])
     ->name('lowongan-saya');
 
-// Update lowongan
 Route::put('/lowongan-saya/{jobListing}', [RecruiterJobController::class, 'update'])
     ->whereNumber('jobListing')
     ->name('recruiter.job.update');
 
-// Hapus lowongan
 Route::delete('/lowongan-saya/{jobListing}', [RecruiterJobController::class, 'destroy'])
     ->whereNumber('jobListing')
     ->name('recruiter.job.delete');

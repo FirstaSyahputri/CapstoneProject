@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let selectedJobId = null;
 
-    // Pencarian berdasarkan nama pekerjaan
     if (searchInput) {
         searchInput.addEventListener('input', function () {
             const keyword = this.value.trim().toLowerCase();
@@ -39,35 +38,49 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Membuka modal hapus
     document.querySelectorAll('.btn-delete').forEach(function (button) {
         button.addEventListener('click', function () {
             selectedJobId = this.dataset.jobId;
 
-            if (jobNameText) {
-                jobNameText.textContent = '"' + this.dataset.jobName + '"';
+            if (!selectedJobId || !deleteModal) {
+                return;
             }
 
-            if (deleteModal) {
-                deleteModal.style.display = 'flex';
+            if (jobNameText) {
+                jobNameText.textContent =
+                    '"' + this.dataset.jobName + '"';
             }
+
+            deleteModal.style.display = 'flex';
         });
     });
 
-    // Menutup modal
     function closeDeleteModal() {
         if (deleteModal) {
             deleteModal.style.display = 'none';
         }
 
         selectedJobId = null;
+
+        if (confirmDeleteBtn) {
+            confirmDeleteBtn.disabled = false;
+        }
     }
 
     if (cancelDeleteBtn) {
-        cancelDeleteBtn.addEventListener('click', closeDeleteModal);
+        cancelDeleteBtn.addEventListener('click', function () {
+            closeDeleteModal();
+        });
     }
 
-    // Mengirim form penghapusan ke Laravel
+    if (deleteModal) {
+        deleteModal.addEventListener('click', function (event) {
+            if (event.target === deleteModal) {
+                closeDeleteModal();
+            }
+        });
+    }
+
     if (confirmDeleteBtn) {
         confirmDeleteBtn.addEventListener('click', function () {
             if (!selectedJobId) {
@@ -81,11 +94,17 @@ document.addEventListener('DOMContentLoaded', function () {
             if (form) {
                 confirmDeleteBtn.disabled = true;
                 form.submit();
+            } else {
+                console.error(
+                    'Form penghapusan tidak ditemukan:',
+                    selectedJobId
+                );
+
+                confirmDeleteBtn.disabled = false;
             }
         });
     }
 
-    // Menutup modal jika pengguna menekan Escape
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape' && deleteModal) {
             closeDeleteModal();

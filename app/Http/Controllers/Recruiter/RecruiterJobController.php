@@ -34,7 +34,7 @@ class RecruiterJobController extends Controller
         Request $request,
         int $jobListing
     ): JsonResponse|RedirectResponse {
-        // Ambil lowongan beserta syarat dokumennya.
+
         $recruiterId = $request->user()?->getAuthIdentifier();
 
         abort_unless($recruiterId, 401, 'Silakan login terlebih dahulu.');
@@ -42,8 +42,7 @@ class RecruiterJobController extends Controller
         $job = JobListing::with('syaratDokumen')
             ->where('recruiter_id', $recruiterId)
             ->findOrFail($jobListing);
-            
-        // Validasi menggunakan nama input dari form Blade.
+
         $validated = $request->validate([
             'namaPekerjaan' => [
                 'required',
@@ -203,21 +202,23 @@ class RecruiterJobController extends Controller
             );
     }
 
-    public function destroy(
-        Request $request,
-        int $jobListing
-    ): RedirectResponse {
-        $recruiterId = $request->user()?->getAuthIdentifier();
+    
+    public function destroy(int $jobListing): RedirectResponse
+    {
+        $job = JobListing::findOrFail($jobListing);
 
-        abort_unless($recruiterId, 401);
+        DB::transaction(function () use ($job) {
 
-        $job = JobListing::where('recruiter_id', $recruiterId)
-            ->findOrFail($jobListing);
+            $job->applications()->delete();
 
-        $job->delete();
+            $job->syaratDokumen()->delete();
+
+            $job->delete();
+        });
 
         return redirect()
-            ->route('recruiter.lowongan.index')
+            ->route('lowongan-saya')
             ->with('success', 'Lowongan berhasil dihapus!');
     }
+
 }
