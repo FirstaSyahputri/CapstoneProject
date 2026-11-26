@@ -1,0 +1,26 @@
+.job-hero {
+    width: 100%; height: 260px; object-fit: cover;
+    border-radius: 16px; background: var(--blue-soft);
+}
+.job-hero-empty {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue); font-size: 56px;
+}
+.job-title { margin: 18px 0 4px; font-size: 28px; }
+.job-company { color: var(--muted); display: flex; align-items: center; gap: 8px; margin: 0 0 18px; flex-wrap: wrap; }
+.desc { line-height: 1.7; white-space: pre-line; margin: 0; }
+.doc-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.doc-badge {
+    background: var(--blue-soft); color: var(--blue);
+    border: 1px solid var(--blue-border);
+    border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 600;
+}
+.map-frame { width: 100%; height: 300px; border: 0; border-radius: 16px; }
+.map-link { display: inline-block; margin-top: 12px; color: var(--blue); font-weight: 600; text-decoration: none; }
+.btn-lg { padding: 14px 20px; font-size: 16px; }
+.btn-disabled { background: #cbd5e1; color: #64748b; cursor: not-allowed; pointer-events: none; }
+.status-pill { border-radius: 999px; padding: 4px 12px; font-size: 12px; font-weight: 600; }
+.status-open { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.status-closed { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.not-found { text-align: center; padding: 60px 20px; }
+.not-found i { font-size: 48px; color: #94a3b8; margin-bottom: 12px; }
